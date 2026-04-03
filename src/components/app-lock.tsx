@@ -46,8 +46,8 @@ export function AppLock() {
               placeholder="Enter PIN"
               value={pin}
               onChange={(e) => setPin(e.target.value)}
-              className="text-center text-2xl tracking-[0.5em]"
-              maxLength={4}
+              className="text-center text-2xl tracking-[0.2em]"
+              maxLength={8}
             />
             <Button type="submit" className="w-full">
               Unlock

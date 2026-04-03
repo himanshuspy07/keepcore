@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-const APP_PIN = "1234"; // Hardcoded PIN for demonstration
+const APP_PIN = "23111003"; // Hardcoded PIN for demonstration
 
 interface AppLockContextType {
   isLocked: boolean;
