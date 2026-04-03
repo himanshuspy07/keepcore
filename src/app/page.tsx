@@ -1,7 +1,17 @@
+"use client";
+
+import { useAppLock } from "@/context/AppLockContext";
+import { AppLock } from "@/components/app-lock";
 import { Header } from "@/components/header";
 import { MediaLibrary } from "@/components/media-library";
 
 export default function Home() {
+  const { isLocked } = useAppLock();
+
+  if (isLocked) {
+    return <AppLock />;
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-background">
       <Header />

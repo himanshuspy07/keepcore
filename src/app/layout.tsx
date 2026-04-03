@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import PwaRegistry from '@/components/pwa-registry';
+import { AppLockProvider } from '@/context/AppLockContext';
 
 export const metadata: Metadata = {
   title: 'KeepCore',
@@ -23,9 +24,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#1C1E22" />
       </head>
       <body className="font-body antialiased">
-        <PwaRegistry />
-        {children}
-        <Toaster />
+        <AppLockProvider>
+          <PwaRegistry />
+          {children}
+          <Toaster />
+        </AppLockProvider>
       </body>
     </html>
   );
